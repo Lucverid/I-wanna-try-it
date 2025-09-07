@@ -1,9 +1,4 @@
 const title = document.querySelector('.title')
-title.style.display = 'flex'
-title.style.flexWrap = 'wrap'
-title.style.justifyContent = 'center'
-title.style.gap = '0.5rem'
-
 const text1 = "Cie ada yang ulang tahun nih".split('')
 const text2 = "Nih ada mini game buat kamu, nanti ada hadiahnya".split('')
 
@@ -27,13 +22,12 @@ function animateText(textArray, callback) {
     title.appendChild(span)
   }
 
-  // Panggil callback setelah animasi selesai
   setTimeout(() => {
     if (callback) callback()
   }, textArray.length * 50 + 1000)
 }
 
-// Animasi fadeIn
+// Tambahkan animasi via JS
 const style = document.createElement('style')
 style.textContent = `
   @keyframes fadeIn {
@@ -43,34 +37,30 @@ style.textContent = `
 `
 document.head.appendChild(style)
 
-// Tombol utama
+// Button "Open"
 const btnContainer = document.querySelector('.btn-container')
 const openBtn = btnContainer.querySelector('.btn')
 
-// Ganti tombol jadi "Lanjut" atau "Nggak"
 function showOptions() {
   btnContainer.innerHTML = `
     <button id="yes">Mau Lanjut</button>
     <button id="no">Nggak Mau</button>
   `
-
-  // Event lanjut
   document.getElementById('yes').onclick = () => {
-    window.location.href = 'game.html' // Ganti dengan halaman minigame
+    window.location.href = 'game.html' // halaman game
   }
 
-  // Event nggak lanjut
   document.getElementById('no').onclick = () => {
     alert("Wah parah, nggak dilanjut 😭")
   }
 }
 
-// Saat klik tombol "Open"
+// Ketika klik Open
 openBtn.addEventListener('click', (e) => {
   e.preventDefault()
-  btnContainer.style.display = 'none' // Sembunyikan tombol open
+  btnContainer.style.display = 'none'
   animateText(text2, showOptions)
 })
 
-// Jalankan teks awal dulu
+// Teks awal
 animateText(text1)
