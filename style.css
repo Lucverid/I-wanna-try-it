@@ -6,23 +6,24 @@
 }
 
 /* Background malam */
-body, html {
+html, body {
   height: 100%;
   background: black;
   font-family: 'Segoe UI', sans-serif;
   overflow: hidden;
 }
 
-/* Bintang-bintang */
+/* Langit malam */
 .night {
   position: fixed;
   width: 100%;
   height: 100%;
   background: black;
-  overflow: hidden;
   z-index: 0;
+  overflow: hidden;
 }
 
+/* Bintang berkedip */
 .stars {
   width: 100%;
   height: 100%;
@@ -52,15 +53,15 @@ body, html {
   100% { opacity: 1; }
 }
 
-/* Judul */
+/* Judul animasi */
 .title {
   position: absolute;
   top: 10vh;
   width: 100%;
   text-align: center;
   color: white;
-  font-size: 2.5rem;
-  letter-spacing: 2px;
+  font-size: clamp(1rem, 5vw, 2rem);
+  letter-spacing: 1px;
   z-index: 2;
   display: flex;
   flex-wrap: wrap;
@@ -68,7 +69,7 @@ body, html {
   gap: 0.5rem;
 }
 
-/* Tombol */
+/* Tombol utama */
 .btn-container {
   position: absolute;
   top: 60vh;
