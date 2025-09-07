@@ -62,9 +62,13 @@ body, html {
   font-size: 2.5rem;
   letter-spacing: 2px;
   z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-/* Button container */
+/* Tombol */
 .btn-container {
   position: absolute;
   top: 60vh;
@@ -74,7 +78,6 @@ body, html {
   z-index: 3;
 }
 
-/* Button style */
 .btn {
   border: none;
   width: 15em;
@@ -117,4 +120,20 @@ body, html {
 .btn:hover .sparkle {
   fill: white;
   transform: scale(1.2);
+}
+
+button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #5d9bff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #4175c6;
 }
