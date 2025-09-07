@@ -62,8 +62,7 @@ html, body {
   transform: translateX(-50%);
   text-align: center;
   color: white;
-  font-size: clamp(1rem, 5vw, 2rem);
-  line-height: 1.5;
+  font-size: clamp(1.2rem, 4vw, 2rem); /* responsive text */
   z-index: 2;
   display: flex;
   flex-wrap: wrap;
@@ -71,13 +70,17 @@ html, body {
   gap: 0.3rem;
 }
 
+
 /* Tombol utama */
 .btn-container {
   position: absolute;
   top: 60vh;
   width: 100%;
+  padding: 1rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
   z-index: 3;
 }
 
